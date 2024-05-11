@@ -9,7 +9,7 @@ const _httpServer = createServer();
 
 const io = new Server(_httpServer, {
   cors: {
-    origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
     methods: process.env.CORS_METHODS.split('/') || ['GET', 'POST'],
   },
 });
@@ -59,6 +59,6 @@ io.on('connection', (socket) => {
   });
 });
 
-_httpServer.listen(8000, () => {
+_httpServer.listen(process.env.PORT || 8000, () => {
   console.log(`SigServer Running on PORT:${process.env.PORT || 8000}`);
 });
