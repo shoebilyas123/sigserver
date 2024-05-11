@@ -1,0 +1,15 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES5",
+    "types": ["node"],
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["./**/*", "index.ts"]
+}
