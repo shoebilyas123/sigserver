@@ -52,9 +52,11 @@ io.on('connection', (socket) => {
     io.to(to).emit(CALL_ACCEPTED, { from: socket.id, answer });
   });
   socket.on(PEER_NEG_NEEDED, ({ to, offer }) => {
+    console.log('negotiation needed: ', to, offer);
     io.to(to).emit(PEER_NEG_NEEDED, { from: socket.id, offer });
   });
   socket.on(PEER_NEG_DONE, ({ to, offer }) => {
+    console.log('negotiation done: ', to, offer);
     io.to(to).emit(PEER_NEG_DONE, { from: socket.id, offer });
   });
 });
