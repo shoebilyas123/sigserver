@@ -1,0 +1,19 @@
+name: Continous Deployment
+
+on:
+  push:
+    branches: ['main']
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    environment: production
+    name: 'Deploy to Production'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -a
